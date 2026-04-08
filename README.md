@@ -113,11 +113,12 @@ Ejemplos:
 
 ##  Estructura del Proyecto
 
+<img width="446" height="651" alt="image" src="https://github.com/user-attachments/assets/dafb0b77-18d0-45f9-96eb-d8e03d76875a" />
 
 
 ---
 
-## 🚀 Cómo ejecutar el proyecto
+##  Cómo ejecutar el proyecto
 
 ### 1. Configurar entorno
 
@@ -137,7 +138,8 @@ dbt test
 
 ### 3. Ejecutar Airflow
 ```bash
-astro dev start ```
+astro dev start
+```
 
 ### Próximos pasos
 Implementar CI/CD
