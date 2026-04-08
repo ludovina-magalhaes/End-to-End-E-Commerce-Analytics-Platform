@@ -142,13 +142,13 @@ astro dev start
 ```
 
 ### Próximos pasos
-Implementar CI/CD
-Añadir dashboards (Power BI / Tableau)
-Mejorar monitoreo del pipeline
-Integración con datos reales
+Implementar CI/CD  
+Añadir dashboards (Power BI / Tableau)  
+Mejorar monitoreo del pipeline  
+Integración con datos reales  
 
 ### Autor
-Ludovina Magalhães
+Ludovina Magalhães  
 Analytics Engineer 
 
 
