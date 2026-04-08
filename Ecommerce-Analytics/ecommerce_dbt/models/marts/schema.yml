@@ -1,0 +1,104 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: "Dimensión de clientes con información principal para análisis."
+    columns:
+      - name: customer_id
+        description: "Clave única del cliente."
+        tests:
+          - not_null
+          - unique
+
+      - name: name
+        description: "Nombre del cliente."
+
+      - name: email
+        description: "Email del cliente."
+
+      - name: country
+        description: "País del cliente."
+
+  - name: dim_products
+    description: "Dimensión de productos con atributos descriptivos."
+    columns:
+      - name: product_id
+        description: "Clave única del producto."
+        tests:
+          - not_null
+          - unique
+
+      - name: product_name
+        description: "Nombre del producto."
+
+      - name: category
+        description: "Categoría del producto."
+
+      - name: cost
+        description: "Costo unitario del producto."
+
+      - name: price
+        description: "Precio unitario del producto."
+
+  - name: fct_orders
+    description: "Tabla de hechos con una fila por pedido y métricas agregadas."
+    columns:
+      - name: order_id
+        description: "Clave única del pedido."
+        tests:
+          - not_null
+          - unique
+
+      - name: customer_id
+        description: "Cliente asociado al pedido."
+        tests:
+          - relationships:
+              to: ref('dim_customers')
+              field: customer_id
+
+      - name: order_date
+        description: "Fecha del pedido."
+        tests:
+          - not_null
+
+      - name: revenue
+        description: "Ingresos totales del pedido."
+
+      - name: total_cost
+        description: "Costo total del pedido."
+
+      - name: profit
+        description: "Beneficio total del pedido."
+
+  - name: fct_order_items
+    description: "Tabla de hechos a nivel de ítem del pedido."
+    columns:
+      - name: order_id
+        description: "Identificador del pedido."
+        tests:
+          - not_null
+
+      - name: product_id
+        description: "Producto asociado al ítem."
+        tests:
+          - relationships:
+              to: ref('dim_products')
+              field: product_id
+
+      - name: customer_id
+        description: "Cliente asociado al ítem."
+
+      - name: order_date
+        description: "Fecha del pedido."
+
+      - name: quantity
+        description: "Cantidad comprada."
+
+      - name: item_revenue
+        description: "Ingresos del ítem."
+
+      - name: item_cost
+        description: "Costo del ítem."
+
+      - name: item_profit
+        description: "Beneficio del ítem."

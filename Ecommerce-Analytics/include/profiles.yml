@@ -1,0 +1,13 @@
+ecommerce_dbt:
+  outputs:
+    dev:
+      type: snowflake
+      account: LZBDWAP-RN32699
+      user: airflow
+      password: Airflowcuc@1979
+      role: ACCOUNTADMIN
+      database: ECOMMERCE_BD
+      warehouse: COMPUTE_WH
+      schema: PUBLIC
+      threads: 1
+  target: dev

@@ -1,0 +1,90 @@
+[0m19:13:44.684111 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026ACC490C90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026ACC493FD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026ACC493AD0>]}
+
+
+============================== 19:13:44.927564 | e400309e-7481-4dbb-a346-db03f9ec50e4 ==============================
+[0m19:13:44.927564 [info ] [MainThread]: Running with dbt=1.9.0
+[0m19:13:44.929095 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'version_check': 'True', 'profiles_dir': 'C:\\Users\\lagma\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt init', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m19:15:42.215088 [debug] [MainThread]: Starter project path: C:\Users\lagma\Desktop\projetos\End-to-End-E-Commerce-Analytics\.venv\Lib\site-packages\dbt\include\starter_project
+[0m19:15:42.299719 [info ] [MainThread]: 
+Your new dbt project "ecommerce_analytics" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m19:15:42.299719 [info ] [MainThread]: Setting up your profile.
+[0m20:08:59.778299 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No adapters available. Learn how to install an adapter by going to https://docs.getdbt.com/docs/connect-adapters#install-using-the-cli
+[0m20:08:59.785335 [debug] [MainThread]: Command `dbt init` failed at 20:08:59.785335 after 3315.28 seconds
+[0m20:08:59.788869 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026ACC184310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026ACC48EC90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026ACC48F550>]}
+[0m20:08:59.791193 [debug] [MainThread]: Flushing usage events
+[0m20:09:00.716730 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:16:43.457948 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000278B10264D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000278B1027F90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000278B10263D0>]}
+
+
+============================== 20:16:43.466029 | b88d1c42-5bc5-4bb5-87d7-78ff7f723db8 ==============================
+[0m20:16:43.466029 [info ] [MainThread]: Running with dbt=1.9.0
+[0m20:16:43.467189 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\lagma\\.dbt', 'debug': 'False', 'warn_error': 'None', 'log_path': 'logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt init', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m20:19:14.728137 [debug] [MainThread]: Starter project path: C:\Users\lagma\Desktop\projetos\End-to-End-E-Commerce-Analytics\.venv\Lib\site-packages\dbt\include\starter_project
+[0m20:19:14.756637 [info ] [MainThread]: 
+Your new dbt project "ecommerce_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m20:19:14.758631 [info ] [MainThread]: Setting up your profile.
+[0m20:45:19.571731 [info ] [MainThread]: Profile ecommerce_dbt written to C:\Users\lagma\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m20:45:19.577994 [debug] [MainThread]: Command `dbt init` succeeded at 20:45:19.577994 after 1716.27 seconds
+[0m20:45:19.579209 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000278AA488CD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000278AA4888D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000278AA488910>]}
+[0m20:45:19.580430 [debug] [MainThread]: Flushing usage events
+[0m20:45:20.426447 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m20:47:02.819496 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BF230DFF50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BF230DD650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BF230DFD90>]}
+
+
+============================== 20:47:02.829789 | 755089c2-d724-4b82-ad57-04c856d1bc2f ==============================
+[0m20:47:02.829789 [info ] [MainThread]: Running with dbt=1.9.0
+[0m20:47:02.833110 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\lagma\\.dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt run', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m20:47:02.835450 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\lagma\Desktop\projetos\End-to-End-E-Commerce-Analytics\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m20:47:02.838607 [debug] [MainThread]: Command `dbt run` failed at 20:47:02.838607 after 0.25 seconds
+[0m20:47:02.840612 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BF23130FD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BF1C5A8990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001BF22F11AD0>]}
+[0m20:47:02.843125 [debug] [MainThread]: Flushing usage events
+[0m20:47:04.026748 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m21:05:45.116614 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000298A208BE50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000298A203CD10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000298A203F650>]}
+
+
+============================== 21:05:45.122635 | 8b933908-5742-417e-9ef1-761017ae6f95 ==============================
+[0m21:05:45.122635 [info ] [MainThread]: Running with dbt=1.9.0
+[0m21:05:45.123624 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'version_check': 'True', 'profiles_dir': 'C:\\Users\\lagma\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt run', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m21:05:45.123624 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path C:\Users\lagma\Desktop\projetos\End-to-End-E-Commerce-Analytics\dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m21:05:45.125622 [debug] [MainThread]: Command `dbt run` failed at 21:05:45.125622 after 0.09 seconds
+[0m21:05:45.126620 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000298A208A610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002989B538990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000298A2031010>]}
+[0m21:05:45.126620 [debug] [MainThread]: Flushing usage events
+[0m21:05:45.939450 [debug] [MainThread]: An error was encountered while trying to flush usage events
