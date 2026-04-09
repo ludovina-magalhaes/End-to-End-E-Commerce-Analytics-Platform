@@ -142,6 +142,10 @@ astro dev start
 ```
 
 ### Próximos pasos
+Orquestração com Apache Airflow  
+Monitorização de pipelines   
+Alertas automáticos de erros via Telegram   
+Integração contínua e melhorias de performance   
 Implementar CI/CD  
 Añadir dashboards (Power BI / Tableau)  
 Mejorar monitoreo del pipeline  
