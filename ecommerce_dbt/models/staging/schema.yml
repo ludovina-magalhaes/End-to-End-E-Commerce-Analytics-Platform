@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: ecommerce
+    database: ECOMMERCE_BD
+    schema: PUBLIC
+    tables:
+      - name: orders

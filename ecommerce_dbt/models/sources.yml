@@ -1,0 +1,96 @@
+version: 2
+
+sources:
+  - name: raw
+    database: ECOMMERCE_BD
+    schema: PUBLIC
+    tables:
+      - name: customers
+      - name: orders
+      - name: order_items
+      - name: products
+      - name: cancelamentos
+
+models:
+  - name: stg_customers
+    description: "Datos de clientes, tratados y estandarizados"
+    columns:
+      - name: customer_id
+        description: "ID único del cliente"
+        tests:
+          - not_null
+          - unique
+      - name: name
+        description: "Nombre del cliente"
+      - name: email
+        description: "Correo electrónico del cliente"
+        tests:
+          - not_null
+      - name: country
+        description: "País del cliente"
+
+  - name: stg_orders
+    description: "Pedidos realizados por clientes"
+    columns:
+      - name: order_id
+        description: "ID del pedido"
+        tests:
+          - not_null
+          - unique
+      - name: customer_id
+        description: "ID del cliente"
+        tests:
+          - not_null
+      - name: order_date
+        description: "Fecha del pedido"
+      - name: status
+        description: "Estado del pedido"
+        tests:
+          - accepted_values:
+              values: ['completo', 'cancelado']
+
+  - name: stg_products
+    description: "Productos del catálogo"
+    columns:
+      - name: product_id
+        description: "ID del producto"
+        tests:
+          - not_null
+          - unique
+      - name: product_name
+        description: "Nombre del producto"
+      - name: category
+        description: "Categoría del producto"
+        tests:
+          - not_null
+      - name: custo
+        description: "Costo del producto"
+      - name: price
+        description: "Precio del producto"
+
+  - name: stg_order_items
+    description: "Ítems de pedidos, con productos y cantidades"
+    columns:
+      - name: order_id
+        description: "ID del pedido"
+        tests:
+          - not_null
+      - name: product_id
+        description: "ID del producto"
+        tests:
+          - not_null
+      - name: quantity
+        description: "Cantidad del producto"
+
+  - name: stg_cancelamentos
+    description: "Pedidos cancelados con motivo y fecha"
+    columns:
+      - name: order_id
+        description: "ID del pedido"
+        tests:
+          - not_null
+          - unique
+      - name: cancel_reason
+        description: "Motivo de la cancelación"
+      - name: cancel_date
+        description: "Fecha de la cancelación"

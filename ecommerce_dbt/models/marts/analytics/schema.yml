@@ -1,0 +1,58 @@
+version: 2
+
+models:
+  - name: customers_metrics
+    description: "Métricas agregadas por cliente para análisis de comportamiento y churn."
+    columns:
+      - name: customer_id
+        description: "Identificador único del cliente."
+        tests:
+          - not_null
+          - unique
+
+      - name: total_orders
+        description: "Número total de pedidos del cliente."
+
+      - name: total_revenue
+        description: "Ingresos totales generados por el cliente."
+
+      - name: avg_order_value
+        description: "Valor medio por pedido."
+
+      - name: last_order_date
+        description: "Fecha del último pedido."
+
+      - name: days_since_last_order
+        description: "Días desde el último pedido."
+
+      - name: is_churned
+        description: "Indicador de churn del cliente."
+
+  
+
+  - name: daily_sales
+    description: "Métricas diarias de ventas."
+    columns:
+      - name: order_date
+        description: "Fecha de la venta."
+        tests:
+          - not_null
+          - unique
+
+      - name: total_orders
+        description: "Número total de pedidos en el día."
+
+      - name: total_revenue
+        description: "Ingresos totales en el día."
+
+      - name: total_profit
+        description: "Beneficio total en el día."
+
+      - name: avg_order_value
+        description: "Valor medio por pedido en el día."
+
+  - name: cancel_metrics
+    description: "Métricas agregadas de cancelaciones por motivo."
+    columns:
+      - name: total_cancelled_orders
+        description: "Número total de pedidos cancelados por motivo."
