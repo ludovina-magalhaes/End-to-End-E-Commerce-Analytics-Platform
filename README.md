@@ -140,103 +140,56 @@ dbt test
 ```bash
 astro dev start
 ```
-## Orquestração com Airflow (DAG)
+---
 
-O pipeline é totalmente orquestrado com Apache Airflow, garantindo execução automatizada e dependências entre tarefas.
+## Orquestación con Airflow (DAG)
 
-A DAG principal é:
+El pipeline está completamente orquestado con Apache Airflow, garantizando ejecución automatizada y gestión de dependencias entre tareas.
 
+La DAG principal es:
+
+```bash
 ludovina_ecommerce_pipeline
-Fluxo da DAG
+```
+Flujo de la DAG
 
-O pipeline segue esta ordem:
+El pipeline sigue este orden:
 
-generar_datos_fake
-Executa script Python que gera dados com Faker
-Carrega diretamente no Snowflake
-dbt_run
-Executa transformações no Snowflake
-Cria modelos staging, intermediate e marts
-dbt_test
-Valida qualidade dos dados com testes dbt
-generar_reporte
-Consulta dados finais
-Gera relatório de negócio
-Envia resumo via Telegram
-Dependência entre tarefas
-generar_datos_fake → dbt_run → dbt_test → generar_reporte
-Exemplo simplificado da DAG
-t1_generar_datos >> t2_dbt_run >> t3_dbt_test >> t4_generar_reporte
-Automação e Alertas com Telegram
+### 1. generar_datos_fake
 
-O projeto inclui envio automático de relatórios via Telegram após execução do pipeline.
+Ejecuta un script en Python que genera datos con Faker
+Carga directamente los datos en Snowflake
 
-O que é enviado
+### 2. dbt_run
 
-O relatório inclui:
+Ejecuta transformaciones en Snowflake
+Crea modelos staging, intermediate y marts
 
-Revenue total
-Número de pedidos
-Top produtos
-Métricas agregadas de negócio
-Configuração
+### 3. dbt_test
 
-As credenciais são definidas no ficheiro .env:
+Valida la calidad de los datos mediante tests de dbt
 
-TELEGRAM_BOT_TOKEN=seu_token_aqui
-TELEGRAM_CHAT_ID=seu_chat_id
-Como funciona
+### 4. generar_reporte
 
-O script generate_report.py:
+Consulta los datos finales
+Genera un reporte de negocio
+Envía un resumen vía Telegram
 
-Liga ao Snowflake
-Executa queries sobre modelos dbt (marts)
-Gera um resumo em texto
-Envia mensagem via API do Telegram
-Exemplo de envio
-url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
-Benefício
+### Dependencia entre tareas
+generar_datos_fake -> dbt_run -> dbt_test -> generar_reporte 
 
-Isto transforma o pipeline em algo orientado a negócio:
+### Ejemplo simplificado de la DAG
+t1_generar_datos >> t2_dbt_run >> t3_dbt_test >> t4_generar_reporte 
 
-não só processa dados
-mas também entrega insights automaticamente
-Monitorização do Pipeline
+### Automatización y Alertas con Telegram
+El proyecto incluye el envío automático de reportes vía Telegram tras la ejecución del pipeline.
 
-Com Airflow, é possível:
-
-visualizar execução das tasks
-identificar falhas rapidamente
-reexecutar tarefas específicas
-acompanhar histórico de runs
-
-A interface está disponível em:
-
-http://localhost:8080
-Pipeline End-to-End Automatizado
-
-Com estas integrações, o pipeline passa a ser totalmente automatizado:
-
-ingestão de dados
-transformação
-validação
-entrega de insights
-
-Sem intervenção manual.
-
-Atualização dos Próximos Passos
-
-Substitui esta parte:
-
-### Próximos pasos
-Orquestração com Apache Airflow  
-Monitorização de pipelines   
-Alertas automáticos de erros via Telegram   
-Integração contínua e melhorias de performance   
-Implementar CI/CD  
-Añadir dashboards (Power BI / Tableau)  
-Mejorar monitoreo del pipeline  
-Integración con datos reales  
+### Próximos pasos 
+Integración continua y mejoras de rendimiento
+Implementar CI/CD
+Añadir dashboards (Power BI / Tableau)
+Mejorar el monitoreo del pipeline
+Integración con datos reales
 
 ### Autor
 Ludovina Magalhães  
