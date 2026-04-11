@@ -1,5 +1,4 @@
-![airflow](https://github.com/user-attachments/assets/df36e198-9eaf-4ef6-9fee-52b7101b29cd)
-![airflow](https://github.com/user-attachments/assets/755dddcb-6ee8-47ea-9218-8a603aac1711)
+
 #  End-to-End E-Commerce Analytics Platform
 
 Proyecto completo de Analytics Engineering que simula un entorno real de e-commerce, desde la generación de datos hasta la construcción de modelos analíticos orientados a negocio.
