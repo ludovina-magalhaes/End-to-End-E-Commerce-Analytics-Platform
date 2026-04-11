@@ -139,6 +139,8 @@ dbt test
 ```
 
 ### 3. Ejecutar Airflow
+![astro dev restat](https://github.com/user-attachments/assets/a394b48e-0e5b-40dc-983c-2d388915595b)
+
 ```bash
 astro dev start
 ```
