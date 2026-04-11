@@ -35,7 +35,7 @@ El pipeline sigue una arquitectura ELT moderna:
 - dbt (Transformación y modelado de datos)
 - Apache Airflow (Orquestación de pipelines)
 - Docker + Astro CLI (Entorno reproducible)
-- DBeaver (Exploración de datos)
+
 
 ---
 
