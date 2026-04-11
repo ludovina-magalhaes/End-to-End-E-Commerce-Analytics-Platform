@@ -1,3 +1,5 @@
+![airflow](https://github.com/user-attachments/assets/df36e198-9eaf-4ef6-9fee-52b7101b29cd)
+![airflow](https://github.com/user-attachments/assets/755dddcb-6ee8-47ea-9218-8a603aac1711)
 #  End-to-End E-Commerce Analytics Platform
 
 Proyecto completo de Analytics Engineering que simula un entorno real de e-commerce, desde la generación de datos hasta la construcción de modelos analíticos orientados a negocio.
@@ -144,6 +146,8 @@ dbt test
 ```bash
 astro dev start
 ```
+![airflow](https://github.com/user-attachments/assets/5b99e46c-2326-468a-8d7a-8ac3c3c4ab92)
+
 ---
 
 ## Orquestación con Airflow (DAG)
