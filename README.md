@@ -195,7 +195,6 @@ El proyecto incluye el envío automático de reportes vía Telegram tras la ejec
 <img width="381" height="759" alt="image" src="https://github.com/user-attachments/assets/00d451ce-b132-4fa0-997f-5990156d8841" />
 
 
-![telegram](https://github.com/user-attachments/assets/a1aa27c0-e9ea-4730-b628-20a1763cdeeb)
 
 
 ### Próximos pasos 
