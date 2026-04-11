@@ -130,6 +130,8 @@ Ejemplos:
 ---
 
 ### 2. Ejecutar dbt
+![dbt run](https://github.com/user-attachments/assets/fab046e3-1afb-4151-a0b6-29c8e2339f26)
+
 
 ```bash
 dbt run
