@@ -22,7 +22,8 @@ El proyecto se enfoca en responder preguntas de negocio como:
 
 El pipeline sigue una arquitectura ELT moderna:
 
-<img width="675" height="298" alt="image" src="https://github.com/user-attachments/assets/96801098-6a5b-44c1-9853-468f3e21867f" />
+<img width="664" height="355" alt="image" src="https://github.com/user-attachments/assets/bcb38a51-6214-498b-b76e-376054868d6f" />
+
 
 
 ---
