@@ -190,6 +190,8 @@ t1_generar_datos >> t2_dbt_run >> t3_dbt_test >> t4_generar_reporte
 
 ### Automatización y Alertas con Telegram
 El proyecto incluye el envío automático de reportes vía Telegram tras la ejecución del pipeline.
+![telegram](https://github.com/user-attachments/assets/a1aa27c0-e9ea-4730-b628-20a1763cdeeb)
+
 
 ### Próximos pasos 
 Integración continua y mejoras de rendimiento
