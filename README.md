@@ -189,7 +189,12 @@ Ecommerce-Analytics/
 └── Dockerfile
 ```
 
-### Demo en ejecución
+### 🎥 Ejecución en Tiempo Real
+Los GIFs incluidos en este repositorio muestran la ejecución real del pipeline:
+**dbt run
+astro dev start / restart
+Ejecución de DAGs en Airflow**
+Esto valida que el pipeline funciona de forma end-to-end en entorno local.
 
 **dbt run + dbt test**
 
