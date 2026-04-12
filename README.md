@@ -36,28 +36,8 @@ El pipeline sigue una arquitectura **ELT moderna**: los datos se generan en Pyth
 
 <img width="664" height="355" alt="image" src="https://github.com/user-attachments/assets/bcb38a51-6214-498b-b76e-376054868d6f" />
 
-'''
+<img width="584" height="441" alt="image" src="https://github.com/user-attachments/assets/871c60ba-f3e1-49d5-aea0-3432587d0cb6" />
 
-Python (Faker)
-      │
-      ▼
- Snowflake RAW          ← Datos brutos sin transformar
-      │
-      ▼
-  dbt Staging           ← Limpieza y estandarización
-      │
-      ▼
-dbt Intermediate        ← Joins, agregaciones, reglas de negocio
-      │
-      ▼
-   dbt Marts            ← Star schema: dims + facts + analytics
-      │
-      ▼
- Airflow DAG            ← Orquestación semanal automatizada
-      │
-      ▼
-generate_report.py      ← Reporte de negocio + alerta Telegram
-'''
 
 ---
 
