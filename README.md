@@ -354,7 +354,7 @@ End-to-End-E-Commerce-Analytics-Platform/
 
 ---
 
-### Próximos pasos 
+### Seguinte paso
 
 - [ ] CI/CD con GitHub Actions (`dbt build` en Pull Requests)
 - [ ] Dashboard en Metabase o Power BI conectado a Snowflake
