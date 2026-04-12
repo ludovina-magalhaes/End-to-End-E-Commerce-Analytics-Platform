@@ -1,16 +1,11 @@
 # 🛒 End-to-End E-Commerce Analytics Platform
 
-![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
-![dbt](https://img.shields.io/badge/dbt-Core-orange?logo=dbt)
-![Snowflake](https://img.shields.io/badge/Snowflake-Data%20Warehouse-29B5E8?logo=snowflake)
-![Airflow](https://img.shields.io/badge/Apache%20Airflow-2.x-017CEE?logo=apacheairflow)
-![Docker](https://img.shields.io/badge/Docker-Astro%20CLI-2496ED?logo=docker)
 
 Plataforma completa de **Analytics Engineering** que simula un entorno real de e-commerce, abarcando desde la generación de datos sintéticos hasta la entrega automatizada de insights de negocio vía Telegram.
 
 ---
 
-## 🎯 Preguntas de Negocio que Responde
+##  Preguntas de Negocio que Responde
 
 - ¿Cuál es el revenue total y su evolución en el tiempo?
 - ¿Qué clientes generan más valor? ¿Cuál es su CLV?
@@ -20,7 +15,7 @@ Plataforma completa de **Analytics Engineering** que simula un entorno real de e
 
 ---
 
-## ⚙️ Stack Tecnológico
+##  Stack Tecnológico
 
 | Capa | Herramienta |
 |---|---|
@@ -37,6 +32,7 @@ Plataforma completa de **Analytics Engineering** que simula un entorno real de e
 ## 🏗️ Arquitectura ELT
 
 El pipeline sigue una arquitectura **ELT moderna**: los datos se generan en Python, se cargan directamente en Snowflake y se transforman dentro del propio Data Warehouse mediante dbt Core.
+<img width="664" height="355" alt="image" src="https://github.com/user-attachments/assets/bcb38a51-6214-498b-b76e-376054868d6f" />
 
 ```
 Python (Faker)
@@ -214,19 +210,19 @@ Ecommerce-Analytics/
 
 **dbt run + dbt test**
 
-![dbt run](assets/dbt-run.gif)
+![dbt run](https://github.com/user-attachments/assets/fab046e3-1afb-4151-a0b6-29c8e2339f26)
 
 **astro dev start**
 
-![astro dev start](assets/astro-dev-start.gif)
+![airflow](https://github.com/user-attachments/assets/5b99e46c-2326-468a-8d7a-8ac3c3c4ab92)
 
 **Airflow DAG**
 
-![airflow dag](assets/airflow-dag.gif)
+![astro dev restat](https://github.com/user-attachments/assets/a394b48e-0e5b-40dc-983c-2d388915595b)
 
 **Alerta Telegram**
 
-![telegram](assets/telegram.png)
+<img width="381" height="759" alt="image" src="https://github.com/user-attachments/assets/00d451ce-b132-4fa0-997f-5990156d8841" />
 
 ---
 
