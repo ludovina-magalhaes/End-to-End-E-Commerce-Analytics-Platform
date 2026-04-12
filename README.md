@@ -214,11 +214,12 @@ Ecommerce-Analytics/
 
 **astro dev start**
 
-![airflow](https://github.com/user-attachments/assets/5b99e46c-2326-468a-8d7a-8ac3c3c4ab92)
+![astro dev restat](https://github.com/user-attachments/assets/a394b48e-0e5b-40dc-983c-2d388915595b)
+
 
 **Airflow DAG**
 
-![astro dev restat](https://github.com/user-attachments/assets/a394b48e-0e5b-40dc-983c-2d388915595b)
+![airflow](https://github.com/user-attachments/assets/5b99e46c-2326-468a-8d7a-8ac3c3c4ab92)
 
 **Alerta Telegram**
 
