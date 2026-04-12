@@ -36,6 +36,7 @@ El pipeline sigue una arquitectura **ELT moderna**: los datos se generan en Pyth
 
 <img width="664" height="355" alt="image" src="https://github.com/user-attachments/assets/bcb38a51-6214-498b-b76e-376054868d6f" />
 
+---
 
 Python (Faker)
       │
