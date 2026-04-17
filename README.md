@@ -1,31 +1,39 @@
-#  End-to-End E-Commerce Analytics Platform
+# End-to-End E-Commerce Analytics Platform
 
+Este proyecto simula un entorno real de e-commerce y muestra cómo construir un pipeline completo de datos que transforma información bruta en insights accionables de negocio.
 
-Plataforma completa de **Analytics Engineering** que simula un entorno real de e-commerce, abarcando desde la generación de datos sintéticos hasta la entrega automatizada de insights de negocio vía Telegram.
+El sistema automatiza todo el flujo de datos, desde la generación e ingestión hasta la entrega final de métricas listas para análisis.
 
----
+## ¿Qué problema resuelve?
 
-##  Preguntas de Negocio que Responde
+En muchos equipos, el análisis de datos depende de procesos manuales, datos inconsistentes y falta de estandarización.
 
-- ¿Cuál es el revenue total y su evolución en el tiempo?
-- ¿Qué clientes generan más valor? ¿Cuál es su CLV?
-- ¿Cuál es la tasa de churn y qué la impulsa?
-- ¿Qué productos y categorías son más rentables?
-- ¿Qué impacto financiero tienen las cancelaciones?
+Este proyecto propone una solución basada en una arquitectura moderna que:
 
----
+- Automatiza la actualización de datos
+- Garantiza calidad y consistencia mediante tests
+- Organiza la información en modelos claros y reutilizables
+- Entrega métricas listas para toma de decisiones
 
-##  Stack Tecnológico
+## Resultado final
 
-| Capa | Herramienta |
-|---|---|
-| Generación de datos | Python · Faker |
-| Data Warehouse | Snowflake ❄️ |
-| Transformación y modelado | dbt Core 📦 |
-| Orquestación | Apache Airflow · Astro CLI |
-| Contenedores | Docker |
-| Exploración de datos | DBeaver |
-| Alertas | Telegram Bot 🤖 |
+El pipeline genera de forma automática:
+
+- Revenue y evolución de ventas
+- Customer Lifetime Value (CLV)
+- Churn estimado
+- Análisis de productos y categorías
+- Impacto financiero de cancelaciones
+
+Los resultados se envían como reportes de negocio y alertas automatizadas, eliminando la necesidad de intervención manual.
+
+## Stack utilizado
+
+- Python (Faker) para generación de datos
+- Snowflake como Data Warehouse
+- dbt para transformación y modelado
+- Apache Airflow para orquestación
+- Docker para entorno reproducible
 
 ---
 
