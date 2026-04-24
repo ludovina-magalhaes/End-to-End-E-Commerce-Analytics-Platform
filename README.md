@@ -123,19 +123,13 @@ Estos insights permiten pasar de análisis descriptivo a decisiones estratégica
 
 El modelo sigue una **Star Schema**, separando claramente dimensiones y hechos.
 
-```
-                    ┌──────────────┐
-                    │ dim_customers │
-                    └──────┬───────┘
-                           │
-┌──────────────┐    ┌──────┴───────┐    ┌──────────────┐
-│ dim_products │────│  fct_orders  │────│  dim_date    │
-└──────────────┘    └──────┬───────┘    └──────────────┘
-                           │
-                    ┌──────┴───────────┐
-                    │ fct_order_items  │
-                    └──────────────────┘
-```
+### Modelo RAW
+<img width="740" height="651" alt="image" src="https://github.com/user-attachments/assets/f1c113a5-30f6-4fde-a8d1-2c1806bd6fab" />
+
+
+### Modelo Analitico
+<img width="470" height="499" alt="image" src="https://github.com/user-attachments/assets/e967dc31-52f4-4943-8bdf-4d56ddc84d98" />
+
 
 **Grain:**
 
