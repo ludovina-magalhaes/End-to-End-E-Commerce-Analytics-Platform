@@ -49,11 +49,9 @@ Resultado:
 
 ## Arquitectura
 
-```
 <img width="664" height="355" alt="image" src="https://github.com/user-attachments/assets/bcb38a51-6214-498b-b76e-376054868d6f" />
 
-<img width="584" height="441" alt="image" src="https://github.com/user-attachments/assets/871c60ba-f3e1-49d5-aea0-3432587d0cb6" />
-```
+
 
 **Stack:**
 
@@ -327,6 +325,23 @@ astro dev start
 # Interfaz disponible en http://localhost:8080
 # user: admin | password: admin
 ```
+
+**dbt run + dbt test**
+
+![dbt run](https://github.com/user-attachments/assets/fab046e3-1afb-4151-a0b6-29c8e2339f26)
+
+**astro dev start**
+
+![astro dev restat](https://github.com/user-attachments/assets/a394b48e-0e5b-40dc-983c-2d388915595b)
+
+
+**Airflow DAG**
+
+![airflow](https://github.com/user-attachments/assets/5b99e46c-2326-468a-8d7a-8ac3c3c4ab92)
+
+**Alerta Telegram**
+
+<img width="381" height="759" alt="image" src="https://github.com/user-attachments/assets/00d451ce-b132-4fa0-997f-5990156d8841" />
 
 ### 5. Ejecutar la DAG
 Airflow UI → `ludovina_ecommerce_pipeline` → toggle ON → ▶️ Trigger DAG
