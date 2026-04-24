@@ -128,7 +128,7 @@ El modelo sigue una **Star Schema**, separando claramente dimensiones y hechos.
 
 
 ### Modelo Analitico
-<img width="470" height="499" alt="image" src="https://github.com/user-attachments/assets/e967dc31-52f4-4943-8bdf-4d56ddc84d98" />
+<img width="689" height="728" alt="image" src="https://github.com/user-attachments/assets/9150fa79-c2bf-4ad8-81bd-b847977e2f93" />
 
 
 **Grain:**
