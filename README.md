@@ -432,6 +432,10 @@ El análisis de estacionalidad muestra un patrón semanal moderado. Las ventas t
 
 En síntesis, el negocio presenta tres grandes conclusiones: el ticket medio es estable, la recurrencia de clientes es el principal factor que diferencia clientes activos e inactivos, y las cancelaciones tienen un impacto económico significativo. Las principales palancas de mejora son aumentar la frecuencia de compra, reducir cancelaciones, reforzar estrategias de retención y construir una fuente de ingresos más previsible a lo largo del tiempo.
 
+
+
+
+
 ## Próximos Pasos
 
 - [ ] CI/CD con GitHub Actions (`dbt build` en Pull Requests)
@@ -440,6 +444,9 @@ En síntesis, el negocio presenta tres grandes conclusiones: el ticket medio es 
 - [ ] CLV por cohortes mensuales
 
 ---
+
+
+
 
 ## Autora
 
