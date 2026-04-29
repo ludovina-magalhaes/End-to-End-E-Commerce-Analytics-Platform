@@ -38,9 +38,7 @@ required_vars = {
 missing = [k for k, v in required_vars.items() if not v]
 
 if missing:
-    raise ValueError(
-        f"Faltam variáveis no .env: {', '.join(missing)}"
-    )
+    raise ValueError(f"Faltam variáveis no .env: {', '.join(missing)}")
 
 print("✅ Variáveis lidas do .env")
 print(f"Database: {SF_DATABASE}")
@@ -70,12 +68,15 @@ except Exception as e:
     print(e)
     raise
 
+
 def upload_to_snowflake(df: pd.DataFrame, table_name: str) -> None:
     try:
+        df.columns = [col.upper() for col in df.columns]
+
         success, nchunks, nrows, _ = write_pandas(
             conn=conn,
             df=df,
-            table_name=table_name,
+            table_name=table_name.upper(),
             database=SF_DATABASE,
             schema=SF_SCHEMA,
             auto_create_table=True,
@@ -83,14 +84,15 @@ def upload_to_snowflake(df: pd.DataFrame, table_name: str) -> None:
         )
 
         if success:
-            print(f"✅ {table_name} carregada com {nrows} linhas")
+            print(f"✅ {table_name.upper()} carregada com {nrows} linhas")
         else:
-            print(f"❌ Falha ao carregar {table_name}")
+            print(f"❌ Falha ao carregar {table_name.upper()}")
 
     except Exception as e:
-        print(f"❌ Erro ao carregar tabela {table_name}")
+        print(f"❌ Erro ao carregar tabela {table_name.upper()}")
         print(e)
         raise
+
 
 # ---------- 1. CLIENTES ----------
 customers = []
@@ -157,20 +159,20 @@ df_order_items = pd.DataFrame(order_items)
 upload_to_snowflake(df_order_items, "ORDER_ITEMS")
 
 # ---------- 4. CANCELAMENTOS ----------
-cancelamentos = df_orders[df_orders["status"] == "cancelado"].copy()
+cancelamentos = df_orders[df_orders["STATUS"] == "cancelado"].copy()
 
-cancelamentos["cancel_reason"] = [
+cancelamentos["CANCEL_REASON"] = [
     fake.sentence(nb_words=4) for _ in range(len(cancelamentos))
 ]
 
-cancelamentos["cancel_date"] = cancelamentos["order_date"].apply(
+cancelamentos["CANCEL_DATE"] = cancelamentos["ORDER_DATE"].apply(
     lambda d: d + timedelta(days=random.randint(1, 3))
 )
 
-df_canc = cancelamentos[["order_id", "cancel_reason", "cancel_date"]]
+df_canc = cancelamentos[["ORDER_ID", "CANCEL_REASON", "CANCEL_DATE"]]
 upload_to_snowflake(df_canc, "CANCELAMENTOS")
 
 cur.close()
 conn.close()
 
-print(" Dados gerados e carregados no Snowflake com sucesso")
+print("✅ Dados gerados e carregados no Snowflake com sucesso")
