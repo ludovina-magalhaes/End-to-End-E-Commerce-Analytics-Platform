@@ -408,6 +408,30 @@ El resultado no es solo técnico: es una base sólida sobre la que cualquier equ
 
 ---
 
+## Conclusiones del Análisis
+
+El análisis permitió evaluar el rendimiento comercial del e-commerce desde una perspectiva integral, combinando métricas de ventas, clientes, productos, rentabilidad, cancelaciones, churn y estacionalidad.
+
+A nivel de ingresos y pedidos, el negocio no presenta una tendencia de crecimiento sostenido. La evolución muestra alta volatilidad, con picos puntuales de revenue que parecen estar asociados a campañas, promociones o eventos específicos, más que a un crecimiento orgánico y recurrente.
+
+El AOV se mantiene relativamente estable durante el periodo analizado, oscilando entre valores próximos a €438 y €520. Esta estabilidad indica que el mix de productos vendidos es consistente. Sin embargo, cuando el volumen de pedidos aumenta, el ticket medio tiende a reducirse, lo que sugiere un posible efecto de promociones o mayor peso de productos de menor precio.
+
+En el análisis de clientes se identifican dos perfiles relevantes: clientes con pocos pedidos pero alto ticket medio, y clientes más frecuentes con un ticket medio moderado. Ambos perfiles aportan valor al negocio, pero requieren estrategias distintas. Los clientes de alto valor deben ser estudiados con más detalle para entender qué categorías compran y cómo replicar ese comportamiento en otros segmentos.
+
+La diferencia entre clientes activos e inactivos es uno de los hallazgos más importantes. Los clientes inactivos no presentan un ticket medio muy diferente, pero sí compran con menor frecuencia. Esto demuestra que el churn está más relacionado con la pérdida de recurrencia que con una reducción del valor por pedido.
+
+La base de clientes muestra una oportunidad clara de reactivación. El ratio de clientes inactivos frente a activos indica que el crecimiento no depende únicamente de adquirir nuevos clientes, sino también de recuperar clientes que ya compraron anteriormente.
+
+En productos y categorías, no se observa una relación relevante entre precio y cantidad vendida. La correlación entre ambas variables es prácticamente nula, lo que indica que, dentro del rango analizado, los clientes no compran menos unidades por el simple hecho de que el producto tenga un precio más alto.
+
+Las cancelaciones representan uno de los principales riesgos del negocio. La tasa media de cancelación alcanza el 17.1%, por encima del benchmark habitual de e-commerce. El impacto económico acumulado asciende a €83,876 en revenue perdido y €37,162 en beneficio no realizado, lo que convierte este punto en una prioridad operacional y financiera.
+
+Por categoría, las cancelaciones están distribuidas de forma relativamente uniforme. Electrónica lidera en términos absolutos porque también es la categoría con mayor volumen de ventas, mientras que Casa presenta un comportamiento más saludable, con menor peso relativo en cancelaciones frente a su contribución al revenue.
+
+El análisis de estacionalidad muestra un patrón semanal moderado. Las ventas tienden a concentrarse entre jueves y sábado, mientras que los domingos presentan mayor volatilidad y algunos de los valores más bajos. A nivel mensual, no existe una estacionalidad fuerte y constante, sino picos asociados probablemente a eventos comerciales específicos.
+
+En síntesis, el negocio presenta tres grandes conclusiones: el ticket medio es estable, la recurrencia de clientes es el principal factor que diferencia clientes activos e inactivos, y las cancelaciones tienen un impacto económico significativo. Las principales palancas de mejora son aumentar la frecuencia de compra, reducir cancelaciones, reforzar estrategias de retención y construir una fuente de ingresos más previsible a lo largo del tiempo.
+
 ## Próximos Pasos
 
 - [ ] CI/CD con GitHub Actions (`dbt build` en Pull Requests)
