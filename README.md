@@ -439,7 +439,7 @@ End-to-End-E-Commerce-Analytics-Platform/
 ├── README.md
 
 ---
-
+'''
 ## Impacto del Proyecto 
 
 Este pipeline permite a una empresa de e-commerce pasar de datos desorganizados a un sistema estructurado de toma de decisiones, reduciendo el tiempo de análisis y mejorando la capacidad de reacción ante cambios en el negocio.
