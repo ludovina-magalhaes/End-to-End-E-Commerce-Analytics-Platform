@@ -365,43 +365,78 @@ astro dev stop
 ## Estructura del Proyecto
 
 ```
-Ecommerce-Analytics/
+End-to-End-E-Commerce-Analytics-Platform/
+│
+├── .astro/
+│   ├── config.yaml
+│   ├── dag_integrity_exceptions.txt
+│   └── test_dag_integrity_default.py
+│
 ├── dags/
-│   └── ecommerce_pipeline.py
+│   └── exampledag.py
+│
+├── ecommerce_dbt/
+│   ├── models/
+│   │   ├── staging/
+│   │   │   ├── stg_customers.sql
+│   │   │   ├── stg_orders.sql
+│   │   │   ├── stg_products.sql
+│   │   │   ├── stg_order_items.sql
+│   │   │   ├── stg_cancelamentos.sql
+│   │   │   └── schema.yml
+│   │   │
+│   │   ├── intermediate/
+│   │   │   ├── int_order_details.sql
+│   │   │   ├── int_order_items_prod.sql
+│   │   │   ├── int_cancel_orders.sql
+│   │   │   └── schema.yml
+│   │   │
+│   │   ├── marts/
+│   │   │   ├── dim_customers.sql
+│   │   │   ├── dim_products.sql
+│   │   │   ├── fct_orders.sql
+│   │   │   ├── fct_order_items.sql
+│   │   │   ├── schema.yml
+│   │   │   └── analytics/
+│   │   │       ├── customers_metrics.sql
+│   │   │       ├── daily_sales.sql
+│   │   │       ├── cancel_metrics.sql
+│   │   │       └── schema.yml
+│   │   │
+│   │   └── sources.yml
+│   │
+│   ├── dbt_project.yml
+│   ├── macros/
+│   ├── seeds/
+│   ├── snapshots/
+│   └── tests/
+│
 ├── include/
-│   └── scripts/
-│       ├── generate_fake_data.py
-│       └── generate_report.py
-├── models/
-│   ├── staging/
-│   │   ├── stg_customers.sql
-│   │   ├── stg_orders.sql
-│   │   ├── stg_products.sql
-│   │   ├── stg_order_items.sql
-│   │   ├── stg_cancelamentos.sql
-│   │   └── schema.yml
-│   ├── intermediate/
-│   │   ├── int_order_details.sql
-│   │   ├── int_order_items_prod.sql
-│   │   ├── int_cancel_orders.sql
-│   │   └── schema.yml
-│   └── marts/
-│       ├── dim_customers.sql
-│       ├── dim_products.sql
-│       ├── fct_orders.sql
-│       ├── fct_order_items.sql
-│       ├── schema.yml
-│       └── analytics/
-│           ├── customer_metrics.sql
-│           ├── daily_sales.sql
-│           ├── cancellation_metrics.sql
-│           └── schema.yml
-├── packages.yml
-├── dbt_project.yml
+│   └── profiles.yml
+│
+├── notebook/
+│   └── analytics.ipynb
+│
+├── scripts/
+│   └── generate_fake_data.py
+│
+├── tests/
+│   └── dags/
+│       └── test_dag_example.py
+│
+├── logs/
+│
 ├── Dockerfile
 ├── airflow_settings.yaml
-└── requirements.txt
-```
+├── main.py
+├── pyproject.toml
+├── requirements.txt
+├── packages.txt
+├── uv.lock
+├── .dockerignore
+├── .gitignore
+├── .python-version
+├── README.md
 
 ---
 
