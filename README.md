@@ -58,6 +58,8 @@ Resultado:
 
 
 
+
+
 **Stack:**
 
 | Capa           | Tecnología                 | Función                           |
@@ -67,6 +69,86 @@ Resultado:
 | Transformación | dbt Core                   | Modelado, tests y documentación   |
 | Orquestación   | Apache Airflow + Astro CLI | Automatización y monitorización   |
 | Entorno        | Docker                     | Reproducibilidad local            |
+
+---
+
+## Cómo Ejecutar
+
+### Requisitos previos
+- Docker Desktop en ejecución
+- Astro CLI instalado
+- Cuenta Snowflake configurada
+
+### 1. Clonar el repositorio
+```bash
+git clone https://github.com/ludovina-magalhaes/End-to-End-E-Commerce-Analytics-Platform.git
+cd End-to-End-E-Commerce-Analytics-Platform/Ecommerce-Analytics
+```
+
+### 2. Configurar `~/.dbt/profiles.yml`
+```yaml
+ecommerce_analytics:
+  outputs:
+    dev:
+      type: snowflake
+      account: <tu_cuenta>
+      user: <tu_usuario>
+      password: <tu_contraseña>
+      role: <tu_rol>
+      database: ECOMMERCE_BD
+      warehouse: COMPUTE_WH
+      schema: PUBLIC
+      threads: 4
+  target: dev
+```
+> Nunca versiones este archivo. Usa variables de entorno en producción.
+
+### 3. Instalar packages dbt
+```bash
+dbt deps
+```
+
+### 4. Iniciar Airflow
+```bash
+astro dev start
+# Interfaz disponible en http://localhost:8080
+# user: admin | password: admin
+```
+
+**dbt run + dbt test**
+
+![dbt run](https://github.com/user-attachments/assets/fab046e3-1afb-4151-a0b6-29c8e2339f26)
+
+**astro dev start**
+
+![astro dev restat](https://github.com/user-attachments/assets/a394b48e-0e5b-40dc-983c-2d388915595b)
+
+
+**Airflow DAG**
+
+![airflow](https://github.com/user-attachments/assets/5b99e46c-2326-468a-8d7a-8ac3c3c4ab92)
+
+**Alerta Telegram**
+
+<img width="381" height="759" alt="image" src="https://github.com/user-attachments/assets/00d451ce-b132-4fa0-997f-5990156d8841" />
+
+### 5. Ejecutar la DAG
+Airflow UI → `ludovina_ecommerce_pipeline` → toggle ON → ▶️ Trigger DAG
+
+### 6. Ejecutar dbt directamente (opcional)
+```bash
+dbt run --select staging        # Solo staging
+dbt run --select intermediate   # Solo intermediate
+dbt run --select marts          # Solo marts
+dbt run                         # Pipeline completo
+dbt test                        # Validar calidad
+dbt build                       # run + test (recomendado para CI/CD)
+```
+
+### 7. Parar el entorno
+```bash
+astro dev stop
+```
 
 ---
 
@@ -279,86 +361,6 @@ ECOMMERCE_BD
 ```
 
 12 tablas materializadas · 9 vistas · pipeline completamente automatizado · calidad validada en cada ejecución.
-
----
-
-## Cómo Ejecutar
-
-### Requisitos previos
-- Docker Desktop en ejecución
-- Astro CLI instalado
-- Cuenta Snowflake configurada
-
-### 1. Clonar el repositorio
-```bash
-git clone https://github.com/ludovina-magalhaes/End-to-End-E-Commerce-Analytics-Platform.git
-cd End-to-End-E-Commerce-Analytics-Platform/Ecommerce-Analytics
-```
-
-### 2. Configurar `~/.dbt/profiles.yml`
-```yaml
-ecommerce_analytics:
-  outputs:
-    dev:
-      type: snowflake
-      account: <tu_cuenta>
-      user: <tu_usuario>
-      password: <tu_contraseña>
-      role: <tu_rol>
-      database: ECOMMERCE_BD
-      warehouse: COMPUTE_WH
-      schema: PUBLIC
-      threads: 4
-  target: dev
-```
-> Nunca versiones este archivo. Usa variables de entorno en producción.
-
-### 3. Instalar packages dbt
-```bash
-dbt deps
-```
-
-### 4. Iniciar Airflow
-```bash
-astro dev start
-# Interfaz disponible en http://localhost:8080
-# user: admin | password: admin
-```
-
-**dbt run + dbt test**
-
-![dbt run](https://github.com/user-attachments/assets/fab046e3-1afb-4151-a0b6-29c8e2339f26)
-
-**astro dev start**
-
-![astro dev restat](https://github.com/user-attachments/assets/a394b48e-0e5b-40dc-983c-2d388915595b)
-
-
-**Airflow DAG**
-
-![airflow](https://github.com/user-attachments/assets/5b99e46c-2326-468a-8d7a-8ac3c3c4ab92)
-
-**Alerta Telegram**
-
-<img width="381" height="759" alt="image" src="https://github.com/user-attachments/assets/00d451ce-b132-4fa0-997f-5990156d8841" />
-
-### 5. Ejecutar la DAG
-Airflow UI → `ludovina_ecommerce_pipeline` → toggle ON → ▶️ Trigger DAG
-
-### 6. Ejecutar dbt directamente (opcional)
-```bash
-dbt run --select staging        # Solo staging
-dbt run --select intermediate   # Solo intermediate
-dbt run --select marts          # Solo marts
-dbt run                         # Pipeline completo
-dbt test                        # Validar calidad
-dbt build                       # run + test (recomendado para CI/CD)
-```
-
-### 7. Parar el entorno
-```bash
-astro dev stop
-```
 
 ---
 
