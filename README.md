@@ -400,13 +400,41 @@ Ecommerce-Analytics/
 
 ---
 
-## Impacto del Proyecto
+## Impacto del Proyecto 
 
 Este pipeline permite a una empresa de e-commerce pasar de datos desorganizados a un sistema estructurado de toma de decisiones, reduciendo el tiempo de análisis y mejorando la capacidad de reacción ante cambios en el negocio.
 
 El resultado no es solo técnico: es una base sólida sobre la que cualquier equipo puede construir dashboards, modelos predictivos o estrategias de retención — sin depender de procesos manuales ni datos inconsistentes.
 
 ---
+
+## Conclusiones del Análisis
+
+El análisis permitió evaluar el rendimiento comercial del e-commerce desde una perspectiva integral, combinando métricas de ventas, clientes, productos, rentabilidad, cancelaciones, churn y estacionalidad.
+
+A nivel de ingresos y pedidos, el negocio no presenta una tendencia de crecimiento sostenido. La evolución muestra alta volatilidad, con picos puntuales de revenue que parecen estar asociados a campañas, promociones o eventos específicos, más que a un crecimiento orgánico y recurrente.
+
+El AOV se mantiene relativamente estable durante el periodo analizado, oscilando entre valores próximos a €438 y €520. Esta estabilidad indica que el mix de productos vendidos es consistente. Sin embargo, cuando el volumen de pedidos aumenta, el ticket medio tiende a reducirse, lo que sugiere un posible efecto de promociones o mayor peso de productos de menor precio.
+
+En el análisis de clientes se identifican dos perfiles relevantes: clientes con pocos pedidos pero alto ticket medio, y clientes más frecuentes con un ticket medio moderado. Ambos perfiles aportan valor al negocio, pero requieren estrategias distintas. Los clientes de alto valor deben ser estudiados con más detalle para entender qué categorías compran y cómo replicar ese comportamiento en otros segmentos.
+
+La diferencia entre clientes activos e inactivos es uno de los hallazgos más importantes. Los clientes inactivos no presentan un ticket medio muy diferente, pero sí compran con menor frecuencia. Esto demuestra que el churn está más relacionado con la pérdida de recurrencia que con una reducción del valor por pedido.
+
+La base de clientes muestra una oportunidad clara de reactivación. El ratio de clientes inactivos frente a activos indica que el crecimiento no depende únicamente de adquirir nuevos clientes, sino también de recuperar clientes que ya compraron anteriormente.
+
+En productos y categorías, no se observa una relación relevante entre precio y cantidad vendida. La correlación entre ambas variables es prácticamente nula, lo que indica que, dentro del rango analizado, los clientes no compran menos unidades por el simple hecho de que el producto tenga un precio más alto.
+
+Las cancelaciones representan uno de los principales riesgos del negocio. La tasa media de cancelación alcanza el 17.1%, por encima del benchmark habitual de e-commerce. El impacto económico acumulado asciende a €83,876 en revenue perdido y €37,162 en beneficio no realizado, lo que convierte este punto en una prioridad operacional y financiera.
+
+Por categoría, las cancelaciones están distribuidas de forma relativamente uniforme. Electrónica lidera en términos absolutos porque también es la categoría con mayor volumen de ventas, mientras que Casa presenta un comportamiento más saludable, con menor peso relativo en cancelaciones frente a su contribución al revenue.
+
+El análisis de estacionalidad muestra un patrón semanal moderado. Las ventas tienden a concentrarse entre jueves y sábado, mientras que los domingos presentan mayor volatilidad y algunos de los valores más bajos. A nivel mensual, no existe una estacionalidad fuerte y constante, sino picos asociados probablemente a eventos comerciales específicos.
+
+En síntesis, el negocio presenta tres grandes conclusiones: el ticket medio es estable, la recurrencia de clientes es el principal factor que diferencia clientes activos e inactivos, y las cancelaciones tienen un impacto económico significativo. Las principales palancas de mejora son aumentar la frecuencia de compra, reducir cancelaciones, reforzar estrategias de retención y construir una fuente de ingresos más previsible a lo largo del tiempo.
+
+
+
+
 
 ## Próximos Pasos
 
@@ -416,6 +444,9 @@ El resultado no es solo técnico: es una base sólida sobre la que cualquier equ
 - [ ] CLV por cohortes mensuales
 
 ---
+
+
+
 
 ## Autora
 
@@ -455,384 +486,3 @@ El resultado no es solo técnico: es una base sólida sobre la que cualquier equ
 
 
 
-
-
-
-----------------------------------------------
-# End-to-End E-Commerce Analytics Platform
-
-Este proyecto simula un entorno real de e-commerce y muestra cómo construir un pipeline completo de datos que transforma información bruta en insights accionables de negocio.
-
-El sistema automatiza todo el flujo de datos, desde la generación e ingestión hasta la entrega final de métricas listas para análisis.
-
-## ¿Qué problema resuelve?
-
-En muchos equipos, el análisis de datos depende de procesos manuales, datos inconsistentes y falta de estandarización.
-
-Este proyecto propone una solución basada en una arquitectura moderna que:
-
-- Automatiza la actualización de datos
-- Garantiza calidad y consistencia mediante tests
-- Organiza la información en modelos claros y reutilizables
-- Entrega métricas listas para toma de decisiones
-
-## Resultado final
-
-El pipeline genera de forma automática:
-
-- Revenue y evolución de ventas
-- Customer Lifetime Value (CLV)
-- Churn estimado
-- Análisis de productos y categorías
-- Impacto financiero de cancelaciones
-
-Los resultados se envían como reportes de negocio y alertas automatizadas, eliminando la necesidad de intervención manual.
-
-## Stack utilizado
-
-- Python (Faker) para generación de datos
-- Snowflake como Data Warehouse
-- dbt para transformación y modelado
-- Apache Airflow para orquestación
-- Docker para entorno reproducible
-
----
-
-## 🏗️ Arquitectura ELT
-
-El pipeline sigue una arquitectura **ELT moderna**: los datos se generan en Python, se cargan directamente en Snowflake y se transforman dentro del propio Data Warehouse mediante dbt Core.
-
-
-<img width="664" height="355" alt="image" src="https://github.com/user-attachments/assets/bcb38a51-6214-498b-b76e-376054868d6f" />
-
-<img width="584" height="441" alt="image" src="https://github.com/user-attachments/assets/871c60ba-f3e1-49d5-aea0-3432587d0cb6" />
-
-
----
-
-##  Modelado de Datos
-
-### Modelo Raw
-
-<!-- [imagen modelo raw] -->
-
-### Modelo Analítico (Star Schema)
-
-<!-- [imagen modelo analítico] -->
-
-### Tablas de Dimensiones
-- `dim_customers` — atributos completos de clientes, deduplicados
-- `dim_products` — catálogo de productos con categorías y precios
-
-### Tablas de Hechos
-- `fct_orders` → métricas agregadas a nivel de pedido
-- `fct_order_items` → granularidad a nivel de ítem, con FK a dimensiones
-
-### Tablas Analíticas (KPIs listos para BI)
-- `customer_metrics` — CLV, total gastado, frecuencia de compra
-- `sales_by_category` — revenue y profit por categoría de producto
-- `daily_sales` — ventas diarias, AOV y número de pedidos por día
-- `cancellation_metrics` — tasa de cancelación e impacto financiero por motivo
-
----
-
-##  Transformaciones dbt por Capa
-
-### Staging — Limpieza sin lógica de negocio
-
-| Modelo | Operación principal |
-|---|---|
-| `stg_customers` | Renombrado, filtrado de nulos en `customer_id`, tests not_null + unique |
-| `stg_orders` | Estandarización de fechas y estados, deduplicación con `ROW_NUMBER()` |
-| `stg_products` | Normalización de nombres, tests not_null + unique en `product_id` |
-| `stg_order_items` | Validación de cantidades positivas, `unique_combination_of_columns` |
-| `stg_cancelamentos` | Estandarización de motivos, filtrado de registros inválidos |
-
-### Intermediate — Lógica de negocio y joins
-
-| Modelo | Descripción |
-|---|---|
-| `int_order_details` | JOIN stg_orders × stg_customers, enriquecimiento y filtrado por fechas |
-| `int_order_items_prod` | JOIN stg_order_items × stg_products, cálculo de subtotales por ítem |
-| `int_cancel_orders` | Cruce cancelaciones × pedidos, impacto financiero por motivo |
-
-### Marts — Tablas finales materializadas como `table`
-
-| Modelo | Tipo | Descripción |
-|---|---|---|
-| `dim_customers` | Dimensión | Clientes con atributos completos, sin duplicados |
-| `dim_products` | Dimensión | Productos con categorías y precios |
-| `fct_orders` | Hechos | Métricas agregadas por pedido |
-| `fct_order_items` | Hechos | Granularidad a nivel de ítem con FK a dims |
-| `daily_sales` | KPI | Ventas diarias + ticket medio |
-| `customer_metrics` | KPI | CLV, LTV, frecuencia de compra por cliente |
-| `cancellation_metrics` | KPI | Tasa de cancelación e impacto en ingresos |
-
----
-
-##  Métricas de Negocio Implementadas
-
-- **Revenue** — ingresos totales y evolución temporal
-- **Profit** — margen neto por producto y categoría
-- **AOV** (Average Order Value) — ticket medio por pedido
-- **CLV** (Customer Lifetime Value) — valor total por cliente
-- **Churn Rate** — tasa de abandono estimada
-- **Cancellation Rate** — tasa e impacto financiero de cancelaciones
-- **Top productos y categorías** — ranking por revenue y volumen
-
----
-
-##  Calidad de Datos
-
-Tests dbt implementados en todos los modelos:
-
-```yaml
-# Ejemplos de tests en schema.yml
-models:
-  - name: dim_customers
-    columns:
-      - name: customer_id
-        tests: [not_null, unique]
-
-  - name: fct_orders
-    columns:
-      - name: order_id
-        tests: [not_null, unique]
-      - name: customer_id
-        tests:
-          - relationships:
-              to: ref('dim_customers')
-              field: customer_id
-
-  - name: stg_order_items
-    columns:
-      - name: order_id
-        tests:
-          - dbt_utils.unique_combination_of_columns:
-              combination_of_columns: [order_id, product_id]
-```
-
-**Tests implementados:** `not_null` · `unique` · `relationships` · `unique_combination_of_columns`
-
----
-
-##  Orquestación con Apache Airflow
-
-### DAG: `ludovina_ecommerce_pipeline`
-
-| Parámetro | Valor |
-|---|---|
-| Schedule | `@weekly` |
-| Catchup | `False` |
-| Retries | `2` con delay de 5 min |
-| Tags | ludovina · ecommerce · snowflake · dbt |
-
-### Flujo de tareas
-
-```
-generar_datos_fake → dbt_run → dbt_test → generar_reporte
-```
-
-| Tarea | Operador | Descripción |
-|---|---|---|
-| `generar_datos_fake` | PythonOperator | Genera datos con Faker y carga en Snowflake RAW |
-| `dbt_run` | BashOperator | Ejecuta `dbt run` — materializa staging → marts |
-| `dbt_test` | BashOperator | Ejecuta `dbt test` — valida calidad en todos los modelos |
-| `generar_reporte` | BashOperator | Genera reporte de negocio y envía alerta vía Telegram |
-
-### Entorno Docker con Astro CLI
-
-Astro CLI levanta automáticamente todos los servicios necesarios (webserver, scheduler, triggerer, PostgreSQL) sin configuración manual de docker-compose.
-
-```
-Ecommerce-Analytics/
-├── dags/
-│   └── ecommerce_pipeline.py     # DAG principal
-├── include/
-│   └── scripts/
-│       ├── generate_fake_data.py
-│       └── generate_report.py
-├── plugins/
-├── requirements.txt
-├── airflow_settings.yaml
-└── Dockerfile
-```
-
-### 🎥 Ejecución en Tiempo Real
-
-Los GIFs incluidos en este repositorio muestran la ejecución real del pipeline:
-Esto valida que el pipeline funciona de forma end-to-end en entorno local.
-
-**dbt run + dbt test**
-
-![dbt run](https://github.com/user-attachments/assets/fab046e3-1afb-4151-a0b6-29c8e2339f26)
-
-**astro dev start**
-
-![astro dev restat](https://github.com/user-attachments/assets/a394b48e-0e5b-40dc-983c-2d388915595b)
-
-
-**Airflow DAG**
-
-![airflow](https://github.com/user-attachments/assets/5b99e46c-2326-468a-8d7a-8ac3c3c4ab92)
-
-**Alerta Telegram**
-
-<img width="381" height="759" alt="image" src="https://github.com/user-attachments/assets/00d451ce-b132-4fa0-997f-5990156d8841" />
-
----
-
-##  Resultado Final en Snowflake
-
-```
-ECOMMERCE_BD
-└── PUBLIC
-    ├── Tablas (12)
-    │   ├── dim_customers         # Dimensión clientes
-    │   ├── dim_products          # Dimensión productos
-    │   ├── fct_orders            # Hechos de pedidos
-    │   ├── fct_order_items       # Hechos de ítems (granular)
-    │   ├── customer_metrics      # KPI: métricas por cliente
-    │   ├── daily_sales           # KPI: ventas diarias
-    │   ├── cancellation_metrics  # KPI: cancelaciones
-    │   └── ... (tablas RAW)
-    └── Vistas (9)
-        ├── stg_*                 # Capa staging
-        └── int_*                 # Capa intermediate
-```
-
-> Las vistas de staging e intermediate no consumen almacenamiento adicional.
-> Los marts se materializan como `table` para garantizar rendimiento en dashboards.
-
----
-
-##  Cómo Ejecutar el Proyecto
-
-### Requisitos previos
-
-- [Docker Desktop](https://www.docker.com/products/docker-desktop/) instalado y en ejecución
-- [Astro CLI](https://www.astronomer.io/docs/astro/cli/install-cli) instalado
-- Cuenta de Snowflake configurada
-
-### 1. Clonar el repositorio
-
-```bash
-git clone https://github.com/ludovina-magalhaes/End-to-End-E-Commerce-Analytics-Platform.git
-cd End-to-End-E-Commerce-Analytics-Platform/Ecommerce-Analytics
-```
-
-### 2. Configurar `~/.dbt/profiles.yml`
-
-```yaml
-ecommerce_analytics:
-  outputs:
-    dev:
-      type: snowflake
-      account: <tu_cuenta>
-      user: <tu_usuario>
-      password: <tu_contraseña>
-      role: <tu_rol>
-      database: ECOMMERCE_BD
-      warehouse: COMPUTE_WH
-      schema: PUBLIC
-      threads: 4
-  target: dev
-```
-
->  Nunca versiones este archivo. Usa variables de entorno para producción.
-
-### 3. Instalar dependencias dbt
-
-```bash
-dbt deps    # Instala dbt_utils y otros packages
-```
-
-### 4. Iniciar Airflow con Astro CLI
-
-```bash
-astro dev start
-```
-
-Accede a la interfaz en: `http://localhost:8080` (usuario: `admin` / contraseña: `admin`)
-
-### 5. Ejecutar la DAG manualmente
-
-Busca `ludovina_ecommerce_pipeline` → activa el toggle → haz clic en ▶️ **Trigger DAG**
-
-### 6. Ejecutar dbt directamente (opcional)
-
-```bash
-dbt run --select staging        # Solo capa staging
-dbt run --select intermediate   # Solo capa intermediate
-dbt run --select marts          # Solo capa marts
-dbt run                         # Todo el pipeline
-dbt test                        # Validar calidad de datos
-dbt build                       # run + test (recomendado para CI/CD)
-```
-
-### 7. Parar el entorno
-
-```bash
-astro dev stop
-```
-
----
-
-##  Estructura del Proyecto
-
-```
-End-to-End-E-Commerce-Analytics-Platform/
-│
-└── Ecommerce-Analytics/
-    ├── dags/
-    │   └── ecommerce_pipeline.py
-    ├── include/
-    │   └── scripts/
-    │       ├── generate_fake_data.py
-    │       └── generate_report.py
-    ├── models/
-    │   ├── staging/
-    │   │   ├── stg_customers.sql
-    │   │   ├── stg_orders.sql
-    │   │   ├── stg_products.sql
-    │   │   ├── stg_order_items.sql
-    │   │   ├── stg_cancelamentos.sql
-    │   │   └── schema.yml
-    │   ├── intermediate/
-    │   │   ├── int_order_details.sql
-    │   │   ├── int_order_items_prod.sql
-    │   │   ├── int_cancel_orders.sql
-    │   │   └── schema.yml
-    │   └── marts/
-    │       ├── dim_customers.sql
-    │       ├── dim_products.sql
-    │       ├── fct_orders.sql
-    │       ├── fct_order_items.sql
-    │       ├── schema.yml
-    │       └── analytics/
-    │           ├── customer_metrics.sql
-    │           ├── daily_sales.sql
-    │           ├── cancellation_metrics.sql
-    │           └── schema.yml
-    ├── packages.yml
-    ├── dbt_project.yml
-    ├── Dockerfile
-    ├── airflow_settings.yaml
-    └── requirements.txt
-```
-
----
-
-### Seguinte paso
-
-- [ ] CI/CD con GitHub Actions (`dbt build` en Pull Requests)
-- [ ] Dashboard en Metabase o Power BI conectado a Snowflake
-
----
-
-## Autora
-
-**Ludovina Magalhães** · Analytics Engineer
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-ludovina--magalhaes-0A66C2?logo=linkedin)](https://www.linkedin.com/in/ludovina-magalhaes)
-[![GitHub](https://img.shields.io/badge/GitHub-ludovina--magalhaes-181717?logo=github)](https://github.com/ludovina-magalhaes)
