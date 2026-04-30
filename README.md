@@ -1,3 +1,4 @@
+<img width="1536" height="1024" alt="arquitetura_ecommerce" src="https://github.com/user-attachments/assets/2fd917c6-2ff8-4eaf-bc8b-6b7c5c6ab892" />
 # End-to-End E-Commerce Analytics Platform
 
 > Proyecto diseñado para replicar un entorno real de trabajo de un Analytics Engineer, construyendo un pipeline de datos orientado a decisiones de negocio: desde la ingesta hasta métricas accionables, automatizadas y con calidad garantizada.
@@ -49,7 +50,8 @@ Resultado:
 
 ## Arquitectura
 
-<img width="664" height="355" alt="image" src="https://github.com/user-attachments/assets/bcb38a51-6214-498b-b76e-376054868d6f" />
+<img width="924" height="617" alt="image" src="https://github.com/user-attachments/assets/23c46df9-24ce-45eb-99d6-4dad5fb79524" />
+
 
 
 
