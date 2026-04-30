@@ -363,8 +363,7 @@ astro dev stop
 ---
 
 ## Estructura del Proyecto
-
-```
+```bash
 End-to-End-E-Commerce-Analytics-Platform/
 │
 ├── .astro/
@@ -437,7 +436,7 @@ End-to-End-E-Commerce-Analytics-Platform/
 ├── .gitignore
 ├── .python-version
 ├── README.md
-
+```
 
 ## Impacto del Proyecto 
 
