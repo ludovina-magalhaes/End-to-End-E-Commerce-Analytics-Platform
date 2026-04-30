@@ -50,7 +50,10 @@ Resultado:
 
 ## Arquitectura
 
+
 <img width="924" height="617" alt="image" src="https://github.com/user-attachments/assets/23c46df9-24ce-45eb-99d6-4dad5fb79524" />
+
+
 
 
 
